@@ -6,8 +6,6 @@ var auth = require('./lib/auth');
 
 var DB_FILE = __dirname + '/data/dindin.sqlite';
 
-console.log(DB_FILE);
-
 exports.register = function (server, options, next) {
 
     var db = new sqlite3.Database(DB_FILE, function (err) {
