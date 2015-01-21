@@ -1,47 +1,50 @@
-var Mysql = require('mysql');
-var Bcrypt = require('bcrypt');
+var sqlite3 = require('sqlite3');
 
-var routes = require('./routes');
-var methods = require('./methods');
-var auth = require('./auth');
-
+var routes = require('./lib/routes');
+var methods = require('./lib/methods');
+var auth = require('./lib/auth');
 
 exports.register = function (server, options, next) {
 
-    var connection = Mysql.createConnection(options.db);
+    var db = new sqlite3.Database('./data/dindin.sqlite', function () {
 
-    server.bind({
-        db: connection
-    });
-
-    // Add server methods
-
-    server.method('retrieve', methods.retrieve, {
-        cache: {
-            expiresIn: 10 * 60 * 1000 // 10 mins
-        },
-        bind: connection
-    });
-
-    server.register(require('hapi-auth-basic'), function (err) {
-
-        if (err) {
-            return next(err);
-        }
-
-        server.auth.strategy('api', 'basic', { 
-            validateFunc: function (username, password, callback) {
-                auth.validateFunc(connection, username, password, callback);
-            }
+        server.bind({
+            db: db
         });
 
-        // Add routes
+        // Add server methods
 
-        server.route(routes(connection));
+        server.method('retrieve', methods.retrieve, {
+            cache: {
+                expiresIn: 10 * 60 * 1000 // 10 mins
+            },
+            bind: db
+        });
 
-        next();
+        // Register plugins
+
+        server.register(require('hapi-auth-basic'), function (err) {
+
+            if (err) {
+                return next(err);
+            }
+
+            server.auth.strategy('api', 'basic', { 
+                validateFunc: function (username, password, callback) {
+                    auth.validateFunc(db, username, password, callback);
+                }
+            });
+
+            // Add routes
+
+            server.route(routes(db));
+
+            next();
+
+        });
 
     });
+
 };
 
 exports.register.attributes = {
