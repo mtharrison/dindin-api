@@ -1,7 +1,6 @@
 var sqlite3 = require('sqlite3');
 
 var routes = require('./lib/routes');
-var methods = require('./lib/methods');
 var auth = require('./lib/auth');
 
 var DB_FILE = __dirname + '/data/dindin.sqlite';
@@ -16,15 +15,6 @@ exports.register = function (server, options, next) {
 
         server.bind({
             db: db
-        });
-
-        // Add server methods
-
-        server.method('retrieve', methods.retrieve, {
-            cache: {
-                expiresIn: 10 * 60 * 1000 // 10 mins
-            },
-            bind: db
         });
 
         // Register plugins
