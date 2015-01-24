@@ -11,13 +11,13 @@ exports.register = function (server, options, next) {
 
     server.bind({db: db});
 
-    server.register(require('hapi-auth-basic'), function (err) {
+    server.register(require('hapi-auth-bearer-token'), function (err) {
 
         if (err) {
             return next(err);
         }
 
-        server.auth.strategy('api', 'basic', { 
+        server.auth.strategy('api', 'bearer-access-token', { 
             validateFunc: Auth.validateFunc.bind(db)
         });
 
