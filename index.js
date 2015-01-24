@@ -11,8 +11,6 @@ exports.register = function (server, options, next) {
 
     server.bind({db: db});
 
-    // Register plugins
-
     server.register(require('hapi-auth-basic'), function (err) {
 
         if (err) {
@@ -22,8 +20,6 @@ exports.register = function (server, options, next) {
         server.auth.strategy('api', 'basic', { 
             validateFunc: Auth.validateFunc.bind(db)
         });
-
-        // Add routes
 
         server.route(Routes);
 
