@@ -1,6 +1,6 @@
 {
   "name": "dindin-api",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "description": "DinDin: A social network for food",
   "main": "index.js",
   "author": "Matt Harrison",
