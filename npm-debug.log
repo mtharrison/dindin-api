@@ -1,0 +1,67 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/mattharrison/.nvm/v0.10.35/bin/node',
+1 verbose cli   '/Users/mattharrison/.nvm/v0.10.35/bin/npm',
+1 verbose cli   'publish' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.35
+4 verbose publish [ '.' ]
+5 verbose cache add [ '.', null ]
+6 verbose cache add name=undefined spec="." args=[".",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: '.',
+7 verbose parsed url   path: '.',
+7 verbose parsed url   href: '.' }
+8 silly lockFile 3a52ce78- .
+9 verbose lock . /Users/mattharrison/.npm/3a52ce78-.lock
+10 verbose tar pack [ '/Users/mattharrison/.npm/dindin-api/1.6.0/package.tgz', '.' ]
+11 verbose tarball /Users/mattharrison/.npm/dindin-api/1.6.0/package.tgz
+12 verbose folder .
+13 info prepublish dindin-api@1.6.0
+14 silly lockFile 1f1177db-tar tar://.
+15 verbose lock tar://. /Users/mattharrison/.npm/1f1177db-tar.lock
+16 silly lockFile c2a80ff3-npm-dindin-api-1-6-0-package-tgz tar:///Users/mattharrison/.npm/dindin-api/1.6.0/package.tgz
+17 verbose lock tar:///Users/mattharrison/.npm/dindin-api/1.6.0/package.tgz /Users/mattharrison/.npm/c2a80ff3-npm-dindin-api-1-6-0-package-tgz.lock
+18 silly lockFile 1f1177db-tar tar://.
+19 silly lockFile 1f1177db-tar tar://.
+20 silly lockFile c2a80ff3-npm-dindin-api-1-6-0-package-tgz tar:///Users/mattharrison/.npm/dindin-api/1.6.0/package.tgz
+21 silly lockFile c2a80ff3-npm-dindin-api-1-6-0-package-tgz tar:///Users/mattharrison/.npm/dindin-api/1.6.0/package.tgz
+22 silly lockFile 2d95c012-son-npm-dindin-api-1-6-0-package /Users/mattharrison/.npm/dindin-api/1.6.0/package
+23 verbose lock /Users/mattharrison/.npm/dindin-api/1.6.0/package /Users/mattharrison/.npm/2d95c012-son-npm-dindin-api-1-6-0-package.lock
+24 silly lockFile 2d95c012-son-npm-dindin-api-1-6-0-package /Users/mattharrison/.npm/dindin-api/1.6.0/package
+25 silly lockFile 2d95c012-son-npm-dindin-api-1-6-0-package /Users/mattharrison/.npm/dindin-api/1.6.0/package
+26 silly lockFile 3a52ce78- .
+27 silly lockFile 3a52ce78- .
+28 silly publish { name: 'dindin-api',
+28 silly publish   version: '1.6.0',
+28 silly publish   description: 'DinDin: A social network for food',
+28 silly publish   main: 'index.js',
+28 silly publish   author: { name: 'Matt Harrison' },
+28 silly publish   license: 'MIT',
+28 silly publish   dependencies:
+28 silly publish    { bcrypt: '^0.8.1',
+28 silly publish      'hapi-auth-bearer-token': '^3.1.0',
+28 silly publish      sqlite3: '^3.0.4' },
+28 silly publish   readme: '# dindin-api\nDinDin: A social network for food (API)\n',
+28 silly publish   readmeFilename: 'README.md',
+28 silly publish   gitHead: '95f36a22715b193f9ab1fd8a9e2c50d117df4127',
+28 silly publish   _id: 'dindin-api@1.6.0',
+28 silly publish   scripts: {},
+28 silly publish   _shasum: '48eb5f4e1c9caa1f3764d7c4bb837f2330129a61',
+28 silly publish   _from: '.' }
+29 error need auth auth and email required for publishing
+29 error need auth You need to authorize this machine using `npm adduser`
+30 error System Darwin 14.0.0
+31 error command "/Users/mattharrison/.nvm/v0.10.35/bin/node" "/Users/mattharrison/.nvm/v0.10.35/bin/npm" "publish"
+32 error cwd /Users/mattharrison/Google Drive/Hapi.js in Action/modules/dindin-api
+33 error node -v v0.10.35
+34 error npm -v 1.4.28
+35 error code ENEEDAUTH
+36 verbose exit [ 1, true ]
