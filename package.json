@@ -1,12 +1,12 @@
 {
   "name": "dindin-api",
-  "version": "1.6.1",
+  "version": "1.7.0",
   "description": "DinDin: A social network for food",
   "main": "index.js",
   "author": "Matt Harrison",
   "license": "MIT",
   "dependencies": {
-    "bcrypt": "^0.8.1",
+    "bcrypt-nodejs": "0.0.3",
     "hapi-auth-bearer-token": "^3.1.0",
     "sqlite3": "^3.0.4"
   }
